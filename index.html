@@ -18,8 +18,8 @@
         <button id="quantity" value="16" onclick="setupGrid(16)">16x16</button>
         <button id="quantity" value="32" onclick="setupGrid(32)">32x32</button>
         <button id="quantity" value="64" onclick="setupGrid(64)">64x64</button>
-        <button class="white" onclick="clearGrid()">clear</button>
-        <button class="rainbow">rainbow</button>
+        <button class="white" onclick="gridClean()">clear</button>
+        <button class="rainbow" id="rainbowBtn">rainbow</button>
       </div>
       <div class="board">
         <div class="sketch-header">
@@ -34,12 +34,14 @@
             <input
               class="knob-input"
               type="color"
-              id="favcolor"
-              name="favcolor"
+              id="fav-color"
+              name="fav-color"
               value="#b6b6b6"
             />
           </div>
-          <div class="knob-container"><div class="knob-eraser"></div></div>
+          <div class="knob-container">
+            <div class="knob-eraser" id="knob-eraser"></div>
+          </div>
         </div>
       </div>
     </main>
