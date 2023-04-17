@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #3c486b;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+header > h1 {
+  color: #f2f2f2;
+  margin: 50px 0 20px;
+  text-align: center;
+}
+
+.board {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #f45050;
+  padding: 20px 90px 100px;
+  border-radius: 14px;
+  box-shadow: 0px 0px 12px #363b49;
+}
+
+.sketch-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.sketch-header > img {
+  width: 50px;
+}
+
+.sketch-header > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 18px;
+  line-height: 19px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f9d949;
+  font-style: italic;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sketch-header > h2 > span {
+  font-size: 34px;
+  line-height: 19px;
+  font-weight: 800;
+  text-transform: capitalize;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.sketch-header > h2 > span > span {
+  position: absolute;
+  top: 10px;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.button-container > button,
+.rainbow {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid #f9d949;
+  background-color: #f2f2f2;
+  color: #f45050;
+}
+
+.button-container > button:hover {
+  background: transparent;
+  transform: scale(0.95);
+}
+
+.button-container > .black:hover {
+  color: #121212;
+}
+
+.button-container > .white:hover {
+  color: #f2f2f2;
+}
+
+.button-container > .rainbow:hover {
+  background: linear-gradient(
+    to right,
+    #ef5350,
+    #f48fb1,
+    #7e57c2,
+    #2196f3,
+    #26c6da,
+    #43a047,
+    #eeff41,
+    #f9a825,
+    #ff5722
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sketch-grid {
+  display: grid;
+  width: 550px;
+  height: 350px;
+  border-radius: 14px;
+  background-color: #f2f2f2;
+  box-shadow: inset 0 0 10px #747c96;
+  overflow: hidden;
+}
+
+.knobs-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 97%;
+  position: absolute;
+  bottom: 15px;
+}
+
+.knob-container {
+  padding: 10px;
+  background-color: #f2f2f2;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -3px 5px 12px #3c486b;
+}
+
+.knob-eraser {
+  padding: 10px;
+  background-color: rgb(182, 182, 182);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: all 0.3s linear;
+  box-shadow: inset 0 0 5px #747c96;
+  cursor: pointer;
+}
+
+.knob-input {
+  background-color: #b6b6b6;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  border: none;
+  box-shadow: inset 0 0 5px #747c96;
+}
+
+input[type="color"]:active {
+  transition: transform 0.05s ease-in-out;
+  transform: scale(1);
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+  box-shadow: inset 0 0 5px #747c96;
+}
+
+.knob-input:hover,
+.knob-eraser {
+  opacity: 0.7;
+}
+
+.knob-eraser::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -45px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #f2f2f2;
+  font-family: "Courier New", Courier, monospace;
+  content: "eraser";
+}
+
+footer {
+  color: rgb(100 116 139);
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (max-width: 769px) {
+  .board {
+    padding: 3% 8% 70px;
+    width: 80%;
+  }
+
+  .sketch-header > img {
+    width: 30px;
+  }
+
+  .sketch-header {
+    gap: 10px;
+    margin-left: -10px;
+  }
+
+  .sketch-header > h2 {
+    gap: 10px;
+    font-size: 8px;
+  }
+
+  .sketch-header > h2 > span {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .sketch-header > h2 > span > span {
+    top: 5px;
+    font-size: 8px;
+  }
+
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    width: 100%;
+  }
+
+  .sketch-grid {
+    width: 100%;
+  }
+
+  .knob-container {
+    width: 30px;
+    height: 30px;
+  }
+
+  .knob-eraser {
+    width: 10px;
+    height: 10px;
+  }
+
+  .knob-input {
+    width: 30px;
+    height: 30px;
+  }
+
+  .knob-eraser::after {
+    margin-top: 1px;
+    font-size: 6px;
+  }
+
+  footer {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  }
+}
